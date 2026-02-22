@@ -71,14 +71,14 @@ function go(){
   if(isDirectFile(link)){
     const a=document.createElement("a");
     a.href=link;
-    a.download="";
+    a.setAttribute("download","rifz.mp4");
     document.body.appendChild(a);
     a.click();
     a.remove();
     return;
   }
 
-  alert("حط رابط mp4 مباشر عشان ينزل داخل الموقع");
+  alert("حط رابط mp4 عشان ينزل ياحلو");
 }
 </script>
 
