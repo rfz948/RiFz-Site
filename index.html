@@ -59,21 +59,26 @@ background:#ff3355;
 </div>
 
 <script>
-function go(){
-let link=document.getElementById("url").value;
+function isDirectFile(url){
+  return /\.(mp4|mov|m4v|webm)(\?.*)?$/i.test(url);
+}
 
-if(link.includes("tiktok")){
-window.open("https://snaptik.app/en?url="+link);
-}
-else if(link.includes("youtu")){
-window.open("https://en.y2mate.is/?url="+link);
-}
-else if(link.includes("instagram")){
-window.open("https://igram.world/?url="+link);
-}
-else{
-alert("حط رابط صحيح");
-}
+function go(){
+  let link=document.getElementById("url").value.trim();
+
+  if(!link) return alert("حط رابط");
+
+  if(isDirectFile(link)){
+    const a=document.createElement("a");
+    a.href=link;
+    a.download="";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    return;
+  }
+
+  alert("حط رابط mp4 مباشر عشان ينزل داخل الموقع");
 }
 </script>
 
