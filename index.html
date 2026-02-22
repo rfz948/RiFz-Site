@@ -1,5 +1,81 @@
-<h1>RiFz موقع تحميل المقاطع</h1>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RiFz Downloader</title>
 
-<p>اضغط لتحميل المقطع</p>
+<style>
+body{
+background:#0d0d0d;
+color:white;
+font-family:Arial;
+text-align:center;
+padding-top:120px;
+}
+.box{
+background:#111;
+padding:40px;
+border-radius:20px;
+width:90%;
+max-width:500px;
+margin:auto;
+box-shadow:0 0 40px #000;
+}
+input{
+width:90%;
+padding:15px;
+border-radius:12px;
+border:none;
+margin-top:20px;
+font-size:16px;
+}
+button{
+padding:15px 30px;
+border:none;
+border-radius:12px;
+background:#ff0033;
+color:white;
+font-size:18px;
+margin-top:20px;
+cursor:pointer;
+}
+button:hover{
+background:#ff3355;
+}
+</style>
+</head>
 
-<a href="حط_رابط_المقطع_هنا">تحميل المقطع</a>
+<body>
+
+<div class="box">
+<h1>🔥 RiFz Downloader</h1>
+<p>تحميل من تيك توك • يوتيوب • انستا</p>
+
+<input id="url" placeholder="حط رابط المقطع هنا">
+
+<br>
+<button onclick="go()">تحميل</button>
+</div>
+
+<script>
+function go(){
+let link=document.getElementById("url").value;
+
+if(link.includes("tiktok")){
+window.open("https://snaptik.app/en?url="+link);
+}
+else if(link.includes("youtu")){
+window.open("https://en.y2mate.is/?url="+link);
+}
+else if(link.includes("instagram")){
+window.open("https://igram.world/?url="+link);
+}
+else{
+alert("حط رابط صحيح");
+}
+}
+</script>
+
+</body>
+</html>
